@@ -1,6 +1,13 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0.0)
 
 PROJECT(WonderTrader)
+INCLUDE_DIRECTORIES("/opt/homebrew/include")
+link_directories("/opt/homebrew/lib")
+#find_package(Boost 1.83.0 REQUIRED COMPONENTS system )
+add_definitions(-w)
+link_libraries(fmt iconv)   # -l flags for linking prog target
+
+
 
 #3. 环境判断
 IF (WIN32)
@@ -37,14 +44,15 @@ ELSE (GNUCC)
 
 		MESSAGE(STATUS "MyDepends is at $ENV{MyDependsGcc}")
 	ELSE(UNIX)
-		SET (MyDeps "/home/mydeps")
-		SET(SUFFIX .so)
-
-		MESSAGE(STATUS "MyDepends is at /home/mydeps")
+		SET(SUFFIX .dylib)
+#		SET (MyDeps "/home/mydeps")
+#		SET(SUFFIX .so)
+#
+#		MESSAGE(STATUS "MyDepends is at /home/mydeps")
 	ENDIF()
 
-	SET(INCS ${MyDeps}/include)
-	SET(LNKS ${MyDeps}/lib)
+#	SET(INCS ${MyDeps}/include)
+#	SET(LNKS ${MyDeps}/lib)
 
 	MESSAGE(STATUS "Platform is x64")
 	SET(PLATFORM x64)

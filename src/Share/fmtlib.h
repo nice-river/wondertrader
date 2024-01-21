@@ -1,9 +1,9 @@
 ﻿#pragma once
 
-#ifndef FMT_HEADER_ONLY
-#define FMT_HEADER_ONLY
-#endif
-#include <spdlog/fmt/bundled/format.h>
+// #ifndef FMT_HEADER_ONLY
+// #define FMT_HEADER_ONLY
+// #endif
+#include <fmt/core.h>
 
 namespace fmtutil
 {
